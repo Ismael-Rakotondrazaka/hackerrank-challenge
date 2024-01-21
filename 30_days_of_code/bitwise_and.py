@@ -4,6 +4,15 @@ def bitwiseAnd(N, K):
     res=0
     for i in range(1, N):
         for j in range(i + 1, N + 1):
+            v=i & j
+            if v > res and v < K: res = v
+    return res
+
+""" # Time limit exceeded
+def bitwiseAnd(N, K):
+    res=0
+    for i in range(1, N):
+        for j in range(i + 1, N + 1):
             a = "{0:b}".format(i)
             b = "{0:b}".format(j)
             m= max(len(a), len(b))
@@ -14,7 +23,7 @@ def bitwiseAnd(N, K):
                 s = str(int(a[k]) * int(b[k])) + s
             v=int(s, 2)
             if v > res and v < K: res = v
-    return res
+    return res """
 
 """ # Time limit exceeded
 def toBinary(n):
